@@ -148,6 +148,11 @@ int wasHigh = 0;
 #endif
 
 // * define steppers *
+
+//first the stepper motors must be initialized, as per the documetnation for accelstepper and this source
+// https://lastminuteengineers.com/a4988-stepper-motor-driver-arduino-tutorial/
+// ^^ the name of this source could not be more accurate ;>
+
 //define the two stepper motors -- classes :>
 //the "DRIVER" option allows for a CNC shield with existing motor drivers instead
 //of utilizing the arduino as the driver itself (better solution this way).
@@ -163,14 +168,7 @@ Servo leftServo;
 
 void setup() {
 
-  //first the stepper motors must be initialized, as per the documetnation for accelstepper and this source
-  // https://lastminuteengineers.com/a4988-stepper-motor-driver-arduino-tutorial/
-  // ^^ the name of this source could not be more accurate ;>
-
-
-
-
-  //set your limits as defined above -- this is insipired  from this code:
+  //set your limits as defined above -- this is insipired from this code:
   // https://codebender.cc/sketch:356209#2%20stepper%20motors%20test%20using%20accelstepper%20library.ino
 
   rightStepper.setMaxSpeed(rightStepperMaxSpeed);
